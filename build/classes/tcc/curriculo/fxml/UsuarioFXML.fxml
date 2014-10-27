@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="378.9609375" prefWidth="377.0" style="-fx-background-color: SkyBlue;&#10;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.UsuarioFXMLController">
+  <children>
+    <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" layoutX="169.0" layoutY="317.0" mnemonicParsing="false" mouseTransparent="false" pickOnBounds="false" prefWidth="40.999908447265625" text="OK" textAlignment="CENTER" textFill="BLACK" wrapText="false">
+      <font>
+        <Font name="System Bold" size="12.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Label layoutX="69.0" layoutY="24.0" text="DADOS DO USUARIO" wrapText="true">
+      <font>
+        <Font name="David" size="20.0" />
+      </font>
+    </Label>
+    <TextField id="TxtNome" fx:id="txtnome" layoutX="67.0" layoutY="60.0" prefWidth="200.0" />
+    <Label layoutX="25.0" layoutY="65.0" text="Nome:">
+      <font>
+        <Font name="David" size="14.0" fx:id="x1" />
+      </font>
+    </Label>
+    <TextField id="Txtemail" fx:id="txtemail" layoutX="67.0" layoutY="104.0" prefWidth="200.0" />
+    <Label font="$x1" layoutX="23.0" layoutY="108.0" text="E-mail:" />
+    <Button font="$x2" layoutX="69.0" layoutY="317.0" mnemonicParsing="false" prefWidth="86.0" text="Cancelar" textAlignment="CENTER" textFill="BLACK" />
+    <TextField id="Telefone" fx:id="txttelefone" layoutX="67.0" layoutY="147.0" prefWidth="153.0" />
+    <Label font="$x1" layoutX="11.0" layoutY="152.0" text="Telefone:" />
+    <TextField id="Telefone" fx:id="txtlogin" layoutX="67.0" layoutY="190.0" prefWidth="153.0" />
+    <Label font="$x1" layoutX="24.0" layoutY="194.0" text="Login:" />
+    <TextField id="Telefone" fx:id="txtsenha" layoutX="67.0" layoutY="231.0" prefWidth="153.0" />
+    <Label font="$x1" layoutX="20.0" layoutY="236.0" text="Senha:" />
+    <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="221.0" layoutY="317.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Salvar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />
+    <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="230.0" layoutY="149.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Editar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />
+    <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="230.0" layoutY="191.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Editar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />
+    <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="230.0" layoutY="231.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Editar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />
+  </children>
+  <effect>
+    <DropShadow blurType="GAUSSIAN" color="#0c0099" height="61.0" radius="30.0" spread="0.12698412698412698" width="61.0" />
+  </effect>
+  <padding>
+    <Insets />
+  </padding>
+</AnchorPane>
