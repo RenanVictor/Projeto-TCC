@@ -81,10 +81,7 @@ public class CursandoFXMLController implements Initializable{
             cursandodados.salvarCursando(cursando);
             Uteis.mensagemSalvo();
             FXMLDocumentController principal = new FXMLDocumentController();
-            principal.OpenWindows("fxml/ExperienciaFXML.fxml");
-            Button botao = (Button) evento.getTarget();
-            Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();
+            PrincipalController.chamaTela("ExperienciaFXML.fxml");
             
         } catch (Exception e) {
             Uteis.mensagemNaoSalvo();

@@ -76,10 +76,7 @@ public class ExperienciaFXMLController implements Initializable{
     public void btnNext(ActionEvent evento){
         salvarDados();
         FXMLDocumentController principal = new FXMLDocumentController();
-        principal.OpenWindows("fxml/ContratoFXML.fxml");
-        Button botao = (Button) evento.getTarget();
-            Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();
+        PrincipalController.chamaTela("ContratoFXML.fxml");
     }
     
 }

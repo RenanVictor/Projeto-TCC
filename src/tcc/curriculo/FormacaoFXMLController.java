@@ -63,10 +63,7 @@ public class FormacaoFXMLController implements Initializable{
             formacaodados.salvarFormacao(formacao);
             Uteis.mensagemSalvo();
             FXMLDocumentController principal = new FXMLDocumentController();
-            principal.OpenWindows("fxml/CursandoFXML.fxml");
-            Button botao = (Button) ev.getTarget();
-            Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();
+            PrincipalController.chamaTela("CursandoFXML.fxml");
         } catch (SQLException ex) {
             ex.printStackTrace();
             Uteis.mensagemNaoSalvo();
