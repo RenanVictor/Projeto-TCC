@@ -21,5 +21,8 @@ public class Uteis {
     public static void mensagemBuscarDados(){
         JOptionPane.showMessageDialog(null, "Não foi possível carregar os dados");
     }
+    public static void mensagemSenhaIncorreta(){
+        JOptionPane.showMessageDialog(null, "Usuário ou senha incorreta");
+    }
     
 }

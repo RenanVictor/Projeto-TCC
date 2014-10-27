@@ -58,9 +58,9 @@ public class UsuarioFXMLController implements Initializable {
         atribuirValores();
         try {
             usuariodados.salvarUsuario(usuario);
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+            Uteis.mensagemSalvo();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro");
+            Uteis.mensagemNaoSalvo();
             ex.printStackTrace();
         }
 

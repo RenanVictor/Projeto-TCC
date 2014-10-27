@@ -78,7 +78,7 @@ public class CandidatoFXMLController implements Initializable {
     @FXML
     public void BtnNext(ActionEvent evento){
         //PreencherCampos();
-        ;
+        
         Candidato candidato = new Candidato();
         SimpleDateFormat dateFormats = new SimpleDateFormat("d/M/y");
         try{
@@ -98,11 +98,12 @@ public class CandidatoFXMLController implements Initializable {
             candidato.setStatus(cmbStatusCursando.getSelectionModel().getSelectedItem());
             candidatodados.salvarCandidato(candidato);
             Uteis.mensagemSalvo();
-            FXMLDocumentController principal = new FXMLDocumentController();
+           /* FXMLDocumentController principal = new FXMLDocumentController();
             principal.OpenWindows("fxml/FormacaoFXML.fxml"); 
             Button botao = (Button) evento.getTarget();
             Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();
+            tela.close();*/
+            PrincipalController.chamaTela("FormacaoFXML.fxml"); 
         }
         catch(Exception ex){
             Uteis.mensagemPreencherCampos();

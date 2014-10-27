@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import tcc.dominio.Empresa;
+import tcc.dominio.Uteis;
 import tcc.dominio.dados.EmpresaDados;
 
 public class EmpresaFXMLController implements Initializable {
@@ -43,9 +44,9 @@ public class EmpresaFXMLController implements Initializable {
         empresa.setRazao(TxtRazaoSocial.getText());
         try {
             empresadados.salvarEmpresa(empresa);
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+            Uteis.mensagemSalvo();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro");
+            Uteis.mensagemNaoSalvo();
             ex.printStackTrace();
         }
     }

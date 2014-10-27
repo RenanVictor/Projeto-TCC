@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="290.9609375" prefWidth="572.000199999995" style="&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.CadidatoFXMLController">
+  <children>
+    <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Gerenciamento de Currículo" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="116.0" AnchorPane.topAnchor="24.0">
+      <font>
+        <Font name="David" size="30.0" />
+      </font>
+    </Label>
+    <Accordion expandedPane="$null" layoutX="453.0" layoutY="283.0" />
+    <TextField id="TxtLogin" layoutX="175.0" layoutY="92.0" prefWidth="200.0" />
+    <PasswordField id="TxtSsenha" layoutX="175.0" layoutY="166.0" prefWidth="200.0" />
+    <Button layoutX="175.0" layoutY="226.0" mnemonicParsing="false" onAction="#BtnOk" prefWidth="40.999908447265625" text="OK" />
+    <Button layoutX="232.0" layoutY="226.0" mnemonicParsing="false" prefWidth="86.0" text="Cancelar" />
+    <Button layoutX="334.0" layoutY="226.0" mnemonicParsing="false" text="Sair" />
+    <Label layoutX="248.0" layoutY="66.0" text="Usuário" />
+    <Label layoutX="248.0" layoutY="137.0" text="Senha" />
+  </children>
+  <effect>
+    <DropShadow color="GREY" height="1.0" radius="0.0" width="1.0" />
+  </effect>
+</AnchorPane>
