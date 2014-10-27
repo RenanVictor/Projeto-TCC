@@ -125,6 +125,7 @@ public class FXMLDocumentController implements Initializable {
 
     public void BtnCadastrarAluno(ActionEvent evento) {
         OpenWindows("fxml/CandidatoFXML.fxml");
+        Uteis.mensagemBuscarDados();
     }
 
     public void BtnCadastrarEmpresa(ActionEvent evento) {
