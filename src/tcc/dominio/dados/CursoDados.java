@@ -2,65 +2,65 @@ package tcc.dominio.dados;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import tcc.dominio.Curso;
-
 
 public class CursoDados {
 
-    
-  public void salvarCurso(Curso curso)throws  SQLException{
-        Connection conexao =  Conexao.get();
-        String sql = "Insert into Curso(titulo,area) Values(?,?)";
+    private EntityManager em;
 
-        PreparedStatement insert = conexao.prepareStatement(sql);
-        
-        insert.setString(1, curso.getTitulo());
-        insert.setString(2, curso.getArea());
+    public CursoDados() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("TCC-CurriculoPU");
+        em = factory.createEntityManager();
+    }
 
-        insert.execute();
-        
+    public void salvarCurso(Curso curso) throws SQLException {
+        EntityTransaction entTrans = em.getTransaction();
+        try {
+            entTrans.begin();
+            em.persist(curso);
+            entTrans.commit();
+        }catch(Exception e){
+            entTrans.rollback();
+            throw new SQLException(e);
+        }
     }
-    
-    public List<Curso> listarCursos()throws SQLException{
-        Connection conexao = Conexao.get();
-        String sql = "SELECT * FROM curso order by titulo";
-        
-        PreparedStatement select = conexao.prepareStatement(sql);
-        
-        ResultSet rs = select.executeQuery(sql);
-        List<Curso> cursos = new ArrayList<>();
-        while (rs.next()) {
-           Curso curso = new Curso();
-           curso.setCodigo(rs.getInt("codcurso"));
-           curso.setArea(rs.getString("area"));
-           curso.setTitulo(rs.getString("titulo"));
-           
-           cursos.add(curso);
+
+    public List<Curso> listarCursos() throws SQLException {
+        CriteriaBuilder cBuilder = em.getCriteriaBuilder();
+        CriteriaQuery<Curso> query = cBuilder.createQuery(Curso.class);
+
+        query.from(Curso.class);
+
+        return em.createQuery(query).getResultList();
     }
-        return cursos;
+
+    public Curso obterCurso(int codigo) {
+        return em.find(Curso.class, codigo);
     }
-    
-    public Curso obterCurso(int codigo){
-        return new Curso();
-    }
-    
-    private void inserirCurso(Curso curso){
+
+    private void inserirCurso(Curso curso) {
         //
     }
-    
-    private void atualizarCurso(Curso curso){
+
+    private void atualizarCurso(Curso curso) {
         //
     }
-    
+
     // ---------------------------------------------- \\
-    public List<Curso> buscarCursoPorTitulo(String titulo){
-        if(titulo == null || titulo.isEmpty())
+    public List<Curso> buscarCursoPorTitulo(String titulo) {
+        if (titulo == null || titulo.isEmpty()) {
             return null;
-        
+        }
+
         return new ArrayList<Curso>();
     }
 }

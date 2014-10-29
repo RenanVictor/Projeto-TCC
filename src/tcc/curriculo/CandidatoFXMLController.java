@@ -6,10 +6,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import tcc.dominio.Candidato;
 import tcc.dominio.Estado;
 import tcc.dominio.EstadoCivil;
@@ -77,7 +75,7 @@ public class CandidatoFXMLController implements Initializable {
     //Candidato->Formação->Cursando->Experiencia->Contrato
     @FXML
     public void BtnNext(ActionEvent evento){
-        //PreencherCampos();
+        PreencherCampos();
         
         Candidato candidato = new Candidato();
         SimpleDateFormat dateFormats = new SimpleDateFormat("d/M/y");

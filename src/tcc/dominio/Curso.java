@@ -1,7 +1,16 @@
 package tcc.dominio;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Curso")
 public class Curso {
     
+    @Id 
+    @Column(name = "CodCurso")
     private Integer codigo;
     private String titulo;
     private String area;
