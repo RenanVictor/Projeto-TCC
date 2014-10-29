@@ -11,7 +11,7 @@ public class TCCCurriculo extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/Principal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/FXMLDocument.fxml"));
 
         Scene scene = new Scene(root);
 

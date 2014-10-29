@@ -68,19 +68,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        this.btncadastraraluno.setVisible(false);
-        this.btncadastrarempresa.setVisible(false);
-        this.btncadastrarcurso.setVisible(false);
-        this.btnopcoes.setVisible(false);
-        this.btnpesquisar.setVisible(false);
-    }
 
-    private void setVisible() {
-        this.btncadastraraluno.setVisible(true);
-        this.btncadastrarempresa.setVisible(true);
-        this.btncadastrarcurso.setVisible(true);
-        this.btnopcoes.setVisible(true);
-        this.btnpesquisar.setVisible(true);
     }
 
     @FXML
@@ -96,7 +84,6 @@ public class FXMLDocumentController implements Initializable {
                 usuario.setSenha(TxtSenha.getText());
                 Usuario resultado = usuarios.buscarUsuarioSenha(usuario);
                 if (TxtLogin.getText().equals(resultado.getLogin()) && TxtSenha.getText().equals(resultado.getSenha())) {
-                    setVisible();
                     btnopcoes.setText("Dados do Usuário");
                     TxtLogin.setEditable(false);
                     TxtSenha.setEditable(false);
@@ -112,15 +99,10 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     public void btnSair(ActionEvent e) {
-        this.btncadastraraluno.setVisible(false);
-        this.btncadastrarempresa.setVisible(false);
-        this.btncadastrarcurso.setVisible(false);
-        this.btnopcoes.setVisible(false);
-        this.btnpesquisar.setVisible(false);
-        TxtLogin.clear();
-        TxtSenha.clear();
-        TxtLogin.setEditable(true);
-        TxtSenha.setEditable(true);
+        OpenWindows("fxml/Principal.fxml");
+        Button botao = (Button) e.getTarget();
+        Stage tela = (Stage) botao.getScene().getWindow();
+        tela.close();
     }
 
     public void BtnCadastrarAluno(ActionEvent evento) {

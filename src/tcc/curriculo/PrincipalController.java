@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.MenuBar;
 import javafx.scene.layout.Pane;
 import tcc.curriculo.fxml.JanelaUtil;
 
@@ -23,7 +24,12 @@ import tcc.curriculo.fxml.JanelaUtil;
 public class PrincipalController implements Initializable {
 
     @FXML private static Pane painel;
+    @FXML public MenuBar menubar;
    
+    public static void limparTela(){
+        painel.getChildren().clear();
+    }
+    
     public static void chamaTela(String fxml){
         Node tela = JanelaUtil.carregaTela(fxml);
         
@@ -36,6 +42,8 @@ public class PrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        menubar.setVisible(false);
+        chamaTela("FXMLDocument.fxml");
     }   
     
     public void  abrirCandidato(ActionEvent event){
@@ -50,5 +58,10 @@ public class PrincipalController implements Initializable {
     }
     public void  abrirOperador(ActionEvent event){
         chamaTela("OperadorFXML.fxml");
+    }
+    
+    @FXML
+    public void mostrarMenu(Boolean YesNo){
+        menubar.setVisible(YesNo);
     }
 }
