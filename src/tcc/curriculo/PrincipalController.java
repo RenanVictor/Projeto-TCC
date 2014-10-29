@@ -24,7 +24,6 @@ import tcc.curriculo.fxml.JanelaUtil;
 public class PrincipalController implements Initializable {
 
     @FXML private static Pane painel;
-    @FXML public MenuBar menubar;
    
     public static void limparTela(){
         painel.getChildren().clear();
@@ -42,8 +41,7 @@ public class PrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        menubar.setVisible(false);
-        chamaTela("FXMLDocument.fxml");
+
     }   
     
     public void  abrirCandidato(ActionEvent event){
@@ -60,8 +58,4 @@ public class PrincipalController implements Initializable {
         chamaTela("OperadorFXML.fxml");
     }
     
-    @FXML
-    public void mostrarMenu(Boolean YesNo){
-        menubar.setVisible(YesNo);
-    }
 }

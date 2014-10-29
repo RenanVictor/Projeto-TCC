@@ -52,19 +52,6 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
-    public void CloseWindows(String tela) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(tela));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.close();
-        } catch (Exception e) {
-            Uteis.mensagemNaoAbriuTela();
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -75,9 +62,6 @@ public class FXMLDocumentController implements Initializable {
     public void BtnOk(ActionEvent evento) {
         if (TxtLogin.getText().equals("adm") && TxtSenha.getText().equals("ab123")) {
             btnopcoes.setText("Cadastrar Usuario");
-            btnopcoes.setVisible(true);
-            TxtLogin.setEditable(false);
-            TxtSenha.setEditable(false);
         } else {
             try {
                 usuario.setLogin(TxtLogin.getText());
@@ -85,8 +69,6 @@ public class FXMLDocumentController implements Initializable {
                 Usuario resultado = usuarios.buscarUsuarioSenha(usuario);
                 if (TxtLogin.getText().equals(resultado.getLogin()) && TxtSenha.getText().equals(resultado.getSenha())) {
                     btnopcoes.setText("Dados do Usuário");
-                    TxtLogin.setEditable(false);
-                    TxtSenha.setEditable(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuário ou senha incorreta!");
                 }
