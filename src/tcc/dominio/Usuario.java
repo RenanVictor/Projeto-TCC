@@ -1,5 +1,8 @@
 package tcc.dominio;
 
+import javax.persistence.Table;
+
+@Table(name = "Usuario")
 public class Usuario {
     private Integer codigo;
     private String login;
