@@ -66,47 +66,18 @@ public class UsuarioDados {
     }
     
     // ---------------------------------------------- \\
-    public Usuario buscarUsuarioSenha(Usuario usuario) throws SQLException{
+    public Usuario login(String login, String senha) throws SQLException {
         Connection conexao = Conexao.get();
-        String sql = "SELECT * FROM usuario where login = ? and senha = ? or nome = ?"
-                +" or email = ?;";
-        PreparedStatement select = conexao.prepareStatement(sql);
-        
-        select.setString(1, usuario.getLogin());
-        select.setString(2, usuario.getSenha());
-        select.setString(3, usuario.getNome());
-        select.setString(4, usuario.getEmail());
-        
-        ResultSet rs = select.executeQuery();
-        Usuario resultadoUsuario = new Usuario();
-        while (rs.next()) {           
-           resultadoUsuario.setLogin(rs.getString("login"));
-           resultadoUsuario.setSenha(rs.getString("senha"));
-           resultadoUsuario.setEmail(rs.getString("email"));
-           resultadoUsuario.setNome(rs.getString("nome"));
-           resultadoUsuario.setCodigo(rs.getInt("codusuario"));
-           
-    }
-        return resultadoUsuario;
-}
-     public List<Usuario> buscarUsuario(Usuario usuario) throws SQLException{
-        Connection conexao = Conexao.get();
-        String sql = "SELECT * FROM usuario where login = ? or email = ?;";
-        PreparedStatement select = conexao.prepareStatement(sql);
-        
-        select.setString(1, usuario.getLogin());        
-        select.setString(2, usuario.getEmail());
-        
-        ResultSet rs = select.executeQuery();
-        List<Usuario> resultadoUsuario = new ArrayList<>();
+        String sql = "SELECT * FROM usuario where login = '"+login+"' and senha = '"+senha+"';";
+        PreparedStatement select = conexao.prepareStatement(sql);        
+
+        ResultSet rs = select.executeQuery(sql);
         while (rs.next()) {
-            Usuario us = new Usuario();
-           us.setLogin(rs.getString("login"));
-           us.setSenha(rs.getString("senha"));
-           us.setEmail(rs.getString("email"));
-           us.setNome(rs.getString("nome"));
-           resultadoUsuario.add(us);
+            Usuario usuario = new Usuario();
+            usuario.setLogin(rs.getString("login"));
+            usuario.setSenha(rs.getString("senha"));
+            return usuario;
+        }
+        return null;
     }
-        return resultadoUsuario;
-}
 }

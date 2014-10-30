@@ -3,8 +3,6 @@ package tcc.curriculo;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javax.swing.JOptionPane;
 import tcc.dominio.Usuario;
 import tcc.dominio.Uteis;
 import tcc.dominio.dados.UsuarioDados;
@@ -37,7 +34,6 @@ public class FXMLDocumentController implements Initializable {
     Button btnopcoes;
 
     UsuarioDados usuarios = new UsuarioDados();
-    Usuario usuario = new Usuario();
 
     public void OpenWindows(String tela) {
         try {
@@ -52,44 +48,60 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
+    public void CloseWindows(String tela) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(tela));
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.close();
+        } catch (Exception e) {
+            Uteis.mensagemNaoAbriuTela();
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
+        this.btncadastraraluno.setVisible(false);
+        this.btncadastrarempresa.setVisible(false);
+        this.btncadastrarcurso.setVisible(false);
+        this.btnopcoes.setVisible(false);
+        this.btnpesquisar.setVisible(false);
+
+    }
+
+    private void setVisible() {
+        this.btncadastraraluno.setVisible(true);
+        this.btncadastrarempresa.setVisible(true);
+        this.btncadastrarcurso.setVisible(true);
+        this.btnopcoes.setVisible(true);
+        this.btnpesquisar.setVisible(true);
     }
 
     @FXML
-    public void BtnOk(ActionEvent evento) {
+    public void BtnOk(ActionEvent evento) throws SQLException {
+
         if (TxtLogin.getText().equals("adm") && TxtSenha.getText().equals("ab123")) {
             btnopcoes.setText("Cadastrar Usuario");
+            setVisible();
         } else {
-            try {
-                usuario.setLogin(TxtLogin.getText());
-                usuario.setSenha(TxtSenha.getText());
-                Usuario resultado = usuarios.buscarUsuarioSenha(usuario);
-                if (TxtLogin.getText().equals(resultado.getLogin()) && TxtSenha.getText().equals(resultado.getSenha())) {
-                    btnopcoes.setText("Dados do Usuário");
-                } else {
-                    JOptionPane.showMessageDialog(null, "Usuário ou senha incorreta!");
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-                Uteis.mensagemPreencherCampos();
+            Usuario usuario = usuarios.login(TxtLogin.getText(), TxtSenha.getText());
+
+            if (usuario != null) {
+                setVisible();
+                btnopcoes.setText("Dados do Usuário");
+            } else {
+                Uteis.mensagemSenhaIncorreta();
             }
         }
     }
 
-    @FXML
-    public void btnSair(ActionEvent e) {
-        OpenWindows("fxml/Principal.fxml");
-        Button botao = (Button) e.getTarget();
-        Stage tela = (Stage) botao.getScene().getWindow();
-        tela.close();
-    }
-
     public void BtnCadastrarAluno(ActionEvent evento) {
         OpenWindows("fxml/CandidatoFXML.fxml");
-        Uteis.mensagemBuscarDados();
+
     }
 
     public void BtnCadastrarEmpresa(ActionEvent evento) {
@@ -97,11 +109,12 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void BtnCadastrarCurso(ActionEvent evento) {
-        OpenWindows("fxml/ContratoFXML.fxml");
+        OpenWindows("fxml/CursoFXML.fxml");
     }
 
     public void BtnPesquisar(ActionEvent evento) {
-        OpenWindows("fxml/FormacaoFXML.fxml");
+        //OpenWindows("fxml/FormacaoFXML.fxml");
+
     }
 
     public void BtnOpcoes(ActionEvent evento) {
@@ -111,4 +124,5 @@ public class FXMLDocumentController implements Initializable {
             OpenWindows("fxml/UsuarioFXML.fxml");
         }
     }
+
 }

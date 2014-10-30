@@ -6,10 +6,12 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import tcc.curriculo.fxml.JanelaUtil;
 import tcc.dominio.Candidato;
 import tcc.dominio.Estado;
 import tcc.dominio.EstadoCivil;
@@ -46,20 +48,6 @@ public class CandidatoFXMLController implements Initializable {
         
     }    
     
-    private void limpar(){
-        TxtNome.clear();
-        TxtEndereço.clear();
-        TxtCidade.clear();
-        TxtEmail.clear();
-        TxtCPF.clear();
-        TxtNumend.clear();
-        TxtNatural.clear();
-        TxtTelefone.clear();
-        TxtCelular.clear();
-        TxtDatanasc.clear();
-        TxtBairo.clear();
-    }
-    
     private void PreencherCampos(){
         TxtNome.setText("Teste");
         TxtEndereço.setText("Teste");
@@ -77,8 +65,7 @@ public class CandidatoFXMLController implements Initializable {
     //Candidato->Formação->Cursando->Experiencia->Contrato
     @FXML
     public void BtnNext(ActionEvent evento){
-        //PreencherCampos();
-        
+        PreencherCampos();
         Candidato candidato = new Candidato();
         SimpleDateFormat dateFormats = new SimpleDateFormat("d/M/y");
         try{
@@ -98,12 +85,9 @@ public class CandidatoFXMLController implements Initializable {
             candidato.setStatus(cmbStatusCursando.getSelectionModel().getSelectedItem());
             candidatodados.salvarCandidato(candidato);
             Uteis.mensagemSalvo();
-           /* FXMLDocumentController principal = new FXMLDocumentController();
-            principal.OpenWindows("fxml/FormacaoFXML.fxml"); 
-            Button botao = (Button) evento.getTarget();
-            Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();*/
+            
             PrincipalController.chamaTela("FormacaoFXML.fxml"); 
+           
         }
         catch(Exception ex){
             Uteis.mensagemPreencherCampos();
@@ -115,12 +99,11 @@ public class CandidatoFXMLController implements Initializable {
     @FXML
     public void BtnOk (ActionEvent evento){
         //empresas.setRazao("Teste");
-        
-        
+       
     }
     
     @FXML
     public void BtnCancelar (ActionEvent evento){
-        
+        PrincipalController.limparTela();
     }
 }

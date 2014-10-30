@@ -64,6 +64,7 @@ public class FormacaoFXMLController implements Initializable{
             Uteis.mensagemSalvo();
             FXMLDocumentController principal = new FXMLDocumentController();
             PrincipalController.chamaTela("CursandoFXML.fxml");
+          
         } catch (SQLException ex) {
             ex.printStackTrace();
             Uteis.mensagemNaoSalvo();

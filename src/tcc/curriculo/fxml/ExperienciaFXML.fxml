@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="215.9609375" prefWidth="598.0" style="&#10;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.ExperienciaFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="277.9609375" prefWidth="673.0" style="&#10;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.ExperienciaFXMLController">
   <children>
-    <TextField fx:id="txtEmpresa" layoutX="66.0" layoutY="79.0" prefWidth="218.0" />
-    <TextField fx:id="txtCargo" layoutX="336.0" layoutY="79.0" prefWidth="230.0" />
-    <TextField fx:id="txtFuncao" layoutX="68.0" layoutY="119.0" prefWidth="180.0" />
-    <TextField id="TxtNumend" fx:id="txtEntrada" layoutX="305.0" layoutY="117.0" prefWidth="109.0" />
-    <TextField id="TxtNumend" fx:id="txtSaida" layoutX="457.0" layoutY="118.0" prefWidth="109.0" />
-    <Button layoutX="68.0" layoutY="167.0" mnemonicParsing="false" onAction="#btnNovaExperiencia" text="Nova Experiencia" />
-    <Button layoutX="203.0" layoutY="167.0" mnemonicParsing="false" text="Editar" />
-    <Button layoutX="320.0" layoutY="168.0" mnemonicParsing="false" text="Cancelar" />
-    <Button layoutX="543.0" layoutY="175.0" mnemonicParsing="false" onAction="#btnNext" text="&gt;&gt;" textAlignment="CENTER">
+    <TextField fx:id="txtEmpresa" layoutX="66.0" layoutY="79.0" prefWidth="239.0" />
+    <TextField fx:id="txtCargo" layoutX="366.0" layoutY="79.0" prefWidth="262.0" />
+    <TextField fx:id="txtFuncao" layoutX="68.0" layoutY="127.0" prefWidth="237.0" />
+    <TextField id="TxtNumend" fx:id="txtEntrada" layoutX="367.0" layoutY="125.0" prefWidth="109.0" />
+    <TextField id="TxtNumend" fx:id="txtSaida" layoutX="519.0" layoutY="126.0" prefWidth="109.0" />
+    <Button layoutX="178.0" layoutY="189.0" mnemonicParsing="false" onAction="#btnNovaExperiencia" text="Nova Experiencia" />
+    <Button layoutX="313.0" layoutY="189.0" mnemonicParsing="false" text="Editar" />
+    <Button layoutX="392.0" layoutY="190.0" mnemonicParsing="false" text="Cancelar" />
+    <Button layoutX="622.0" layoutY="243.0" mnemonicParsing="false" onAction="#btnNext" text="&gt;&gt;" textAlignment="CENTER">
       <font>
         <Font name="System Bold" size="12.0" />
       </font>
@@ -31,10 +31,10 @@
       </font>
     </Label>
     <Label layoutX="15.0" layoutY="82.0" text="Empresa:" />
-    <Label layoutX="19.0" layoutY="122.0" text="Função:" />
-    <Label layoutX="294.0" layoutY="82.0" text="Cargo:" />
-    <Label layoutX="422.0" layoutY="120.0" text="Saida:" />
-    <Label layoutX="258.0" layoutY="121.0" text="Entrada:" />
+    <Label layoutX="19.0" layoutY="130.0" text="Função:" />
+    <Label layoutX="324.0" layoutY="82.0" text="Cargo:" />
+    <Label layoutX="484.0" layoutY="128.0" text="Saida:" />
+    <Label layoutX="320.0" layoutY="129.0" text="Entrada:" />
   </children>
   <effect>
     <DropShadow color="GREY" height="1.0" radius="0.0" width="1.0" />

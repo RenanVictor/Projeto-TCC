@@ -1,89 +1,55 @@
 package tcc.curriculo;
 
+import java.net.URL;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
 import tcc.dominio.Usuario;
 import tcc.dominio.Uteis;
 import tcc.dominio.dados.UsuarioDados;
-import tcc.validacao.CampoObrigatorio;
 
-public class OperadorFXMLController extends ValidatedFormController {
+public class OperadorFXMLController implements Initializable {
 
-    @FXML
-    @CampoObrigatorio(nomeParaUsuario = "E-MAIL")
-    public TextField txtemail;
-    @FXML
-    @CampoObrigatorio(nomeParaUsuario = "NOME")
-    public TextField txtnome;
-    @FXML
-    @CampoObrigatorio(nomeParaUsuario = "Login")
-    public TextField txtlogin;
-    @FXML
-    @CampoObrigatorio(nomeParaUsuario = "Telefone")
-    public TextField txttelefone;
-    @FXML
-    @CampoObrigatorio(nomeParaUsuario = "Usuário")
-    public TextField txtsenha;
-
+    @FXML public TextField txtemail;
+    @FXML public TextField txtnome;
+    @FXML public TextField txtlogin;
+    @FXML public TextField txttelefone;
+    @FXML public TextField txtsenha;
+    
     UsuarioDados usuariodados = new UsuarioDados();
-    Usuario usuario = new Usuario();
-
-    private void atribuirValores() {
-        try {
-            usuario.setNome(txtnome.getText());
-            usuario.setEmail(txtemail.getText());
-            usuario.setTelefone(txttelefone.getText());
-            usuario.setLogin(txtlogin.getText());
-            usuario.setSenha(txtsenha.getText());
-        } catch (Exception e) {
-            e.printStackTrace();
-            Uteis.mensagemPreencherCampos();
-        }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
+    public void BtnCancelar (ActionEvent evento){
+        
+        
+        
     }
-
-    private void limpar() {
-        txtnome.clear();
-        txtemail.clear();
-        txttelefone.clear();
-        txtlogin.clear();
-        txtsenha.clear();
-    }
-
-    public void BtnCancelar(ActionEvent evento) {
-
-    }
-
-    private void validarSeJaExisteEmailOuLogin() throws SQLException, Exception {
-        List<Usuario> usuariosAux = usuariodados.buscarUsuario(usuario);
-        for (Usuario usuarioAux : usuariosAux) {
-            if (usuarioAux.getEmail().equals(usuario.getEmail())) {
-                throw new Exception("Já existe um usuário com esse e-mail");
-            }
-            if (usuarioAux.getLogin().equals(usuario.getLogin())) {
-                throw new Exception("Já existe um usuário com esse login");
-            }
-        }
-    }
-
+    
     @FXML
-    public void btnSalvar(ActionEvent evento) {
-        try {
-            validarCamposObrigatorios();
-            atribuirValores();
-            validarSeJaExisteEmailOuLogin();
+    public void btnSalvar(ActionEvent evento){
+        Usuario usuario = new Usuario();
+        usuario.setNome(txtnome.getText());
+        usuario.setEmail(txtemail.getText());
+        usuario.setTelefone(txttelefone.getText());
+        usuario.setLogin(txtlogin.getText());
+        usuario.setSenha(txtsenha.getText());
+    try {
             usuariodados.salvarUsuario(usuario);
             Uteis.mensagemSalvo();
-            limpar();
+            PrincipalController.limparTela();
         } catch (SQLException ex) {
             Uteis.mensagemNaoSalvo();
             ex.printStackTrace();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
+        
+        
     }
-
+    
 }

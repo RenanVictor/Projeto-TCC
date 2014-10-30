@@ -35,7 +35,7 @@
     <Label font="$x1" layoutX="11.0" layoutY="152.0" text="Telefone:" />
     <TextField id="Telefone" fx:id="txtlogin" layoutX="67.0" layoutY="190.0" prefWidth="153.0" />
     <Label font="$x1" layoutX="24.0" layoutY="194.0" text="Login:" />
-    <TextField id="Telefone" fx:id="txtsenha" layoutX="67.0" layoutY="231.0" prefWidth="153.0" />
+    <TextField id="" fx:id="txtsenha" layoutX="67.0" layoutY="231.0" prefWidth="153.0" />
     <Label font="$x1" layoutX="20.0" layoutY="236.0" text="Senha:" />
     <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="221.0" layoutY="317.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Salvar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />
     <Button id="" cache="true" cacheHint="DEFAULT" depthTest="DISABLE" font="$x2" layoutX="230.0" layoutY="149.0" mnemonicParsing="false" mouseTransparent="false" onAction="#btnSalvar" pickOnBounds="false" prefWidth="56.0" text="Editar" textAlignment="CENTER" textFill="BLACK" wrapText="false" />

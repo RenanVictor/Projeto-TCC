@@ -8,19 +8,19 @@
 
 <AnchorPane id="AnchorPane" minHeight="432.0" prefHeight="481.0" prefWidth="791.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.PrincipalController">
   <children>
-    <MenuBar fx:id="menubar" prefWidth="604.0000999999975" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+    <MenuBar prefWidth="604.0000999999975" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
       <menus>
         <Menu mnemonicParsing="false" onAction="#abrirEmpresa" text="Cadastro">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#abrirCandidato" text="Candidato" />
-            <MenuItem mnemonicParsing="false" text="Empresa" />
-            <MenuItem mnemonicParsing="false" text="Curso" />
-            <MenuItem mnemonicParsing="false" onAction="#abrirCandidato" text="Operador" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirEmpresa" text="Empresa" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirCurso" text="Curso" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirOperador" text="Operador" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Pesquisa">
           <items>
-            <MenuItem mnemonicParsing="false" text="Candidato" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirPesquisa" text="Candidato" />
             <MenuItem mnemonicParsing="false" text="Curso" />
             <MenuItem mnemonicParsing="false" text="Empresa" />
           </items>
@@ -32,6 +32,6 @@
         </Menu>
       </menus>
     </MenuBar>
-    <Pane fx:id="painel" prefHeight="456.0" prefWidth="791.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+    <Pane fx:id="painel" prefHeight="456.0" prefWidth="791.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
   </children>
 </AnchorPane>

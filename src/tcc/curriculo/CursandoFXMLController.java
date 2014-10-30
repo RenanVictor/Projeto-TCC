@@ -82,6 +82,7 @@ public class CursandoFXMLController implements Initializable{
             Uteis.mensagemSalvo();
             FXMLDocumentController principal = new FXMLDocumentController();
             PrincipalController.chamaTela("ExperienciaFXML.fxml");
+           
             
         } catch (Exception e) {
             Uteis.mensagemNaoSalvo();

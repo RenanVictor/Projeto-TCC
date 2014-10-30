@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="215.9609375" prefWidth="598.0" style="&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.ContratoFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="233.9609375" prefWidth="616.0" style="&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tcc.curriculo.ContratoFXMLController">
   <children>
-    <Label contentDisplay="CENTER" layoutX="237.0" layoutY="20.0" text="Contrato">
+    <Label contentDisplay="CENTER" layoutX="256.0" layoutY="20.0" text="Contrato">
       <font>
         <Font name="David" size="30.0" />
       </font>
@@ -21,27 +21,27 @@
     <TextField id="TxtNome" fx:id="txtModalidade" layoutX="72.0" layoutY="79.0" prefWidth="218.0" />
     <TextField id="TxtCPF" fx:id="txtInicio" layoutX="337.0" layoutY="79.0" prefWidth="92.0" />
     <TextField id="TxtCPF" fx:id="txtTermino" layoutX="489.0" layoutY="79.0" prefWidth="92.0" />
-    <ComboBox fx:id="cmbSeguro" layoutX="56.0" layoutY="121.0" prefHeight="21.0" prefWidth="105.0">
+    <ComboBox fx:id="cmbSeguro" layoutX="72.0" layoutY="126.0" prefHeight="21.0" prefWidth="105.0">
       <items>
         <FXCollections fx:factory="observableArrayList" />
       </items>
     </ComboBox>
-    <ComboBox fx:id="cmbEmpresa" layoutX="398.0" layoutY="118.0" prefHeight="21.0" prefWidth="183.0">
+    <ComboBox fx:id="cmbEmpresa" layoutX="337.0" layoutY="123.0" prefHeight="21.0" prefWidth="183.0">
       <items>
         <FXCollections fx:factory="observableArrayList" />
       </items>
     </ComboBox>
-    <Button layoutX="210.0" layoutY="167.0" mnemonicParsing="false" text="Editar" />
-    <Button layoutX="313.0" layoutY="167.0" mnemonicParsing="false" text="Cancelar" />
-    <Button layoutX="501.0" layoutY="167.0" mnemonicParsing="false" onAction="#btnFinalizar" text="Finalizar" textAlignment="CENTER">
+    <Button layoutX="146.0" layoutY="184.0" mnemonicParsing="false" text="Editar" />
+    <Button layoutX="268.0" layoutY="184.0" mnemonicParsing="false" text="Cancelar" />
+    <Button layoutX="414.0" layoutY="184.0" mnemonicParsing="false" onAction="#btnFinalizar" text="Finalizar" textAlignment="CENTER">
       <font>
         <Font name="System Bold" size="12.0" />
       </font>
     </Button>
     <Label layoutX="302.0" layoutY="82.0" text="Inicio:" />
-    <Label layoutX="4.0" layoutY="121.0" text="Seguro:" />
+    <Label layoutX="20.0" layoutY="126.0" text="Seguro:" />
     <Label layoutX="440.0" layoutY="83.0" text="Término:" />
-    <Label layoutX="337.0" layoutY="119.0" text="Empresa:" />
+    <Label layoutX="276.0" layoutY="124.0" text="Empresa:" />
   </children>
   <effect>
     <DropShadow color="GREY" height="1.0" radius="0.0" width="1.0" />

@@ -77,6 +77,7 @@ public class ExperienciaFXMLController implements Initializable{
         salvarDados();
         FXMLDocumentController principal = new FXMLDocumentController();
         PrincipalController.chamaTela("ContratoFXML.fxml");
+        
     }
     
 }

@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
 import tcc.dominio.Empresa;
 import tcc.dominio.Uteis;
 import tcc.dominio.dados.EmpresaDados;

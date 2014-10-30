@@ -1,4 +1,7 @@
+
+
 package tcc.curriculo;
+
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,15 +9,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TCCCurriculo extends Application {
 
+
+
+public class TCCCurriculo extends Application {
+    
     @Override
     public void start(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/FXMLDocument.fxml"));
-
+        
+               
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/Principal.fxml"));
+        
         Scene scene = new Scene(root);
-
+        
         stage.setScene(scene);
         stage.show();
     }
@@ -25,5 +32,8 @@ public class TCCCurriculo extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    
+    
+    
+    
 }

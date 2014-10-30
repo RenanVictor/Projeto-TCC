@@ -12,28 +12,27 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.MenuBar;
 import javafx.scene.layout.Pane;
 import tcc.curriculo.fxml.JanelaUtil;
 
 /**
  * FXML Controller class
  *
- * @author aluno
+ * @author Vagner
  */
 public class PrincipalController implements Initializable {
 
     @FXML private static Pane painel;
    
     public static void limparTela(){
+        //remove a tela que está sendo exibida no momento
         painel.getChildren().clear();
     }
     
     public static void chamaTela(String fxml){
         Node tela = JanelaUtil.carregaTela(fxml);
         
-        //remove a tela que está sendo exibida no momento
-        painel.getChildren().clear();
+        limparTela();
         
         //adiciona a nova tela...
         painel.getChildren().add(tela);
@@ -41,7 +40,6 @@ public class PrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
     }   
     
     public void  abrirCandidato(ActionEvent event){
@@ -57,5 +55,10 @@ public class PrincipalController implements Initializable {
     public void  abrirOperador(ActionEvent event){
         chamaTela("OperadorFXML.fxml");
     }
-    
+    public void abrirPesquisa(ActionEvent event){
+        chamaTela("PesquisaFXML.fxml");
+    }
+    public void abrirUsuario(ActionEvent event){
+        chamaTela("UsuarioFXML.fxml");
+    }
 }

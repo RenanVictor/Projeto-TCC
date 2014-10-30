@@ -67,10 +67,9 @@ public class ContratoFXMLController implements Initializable{
         try {
             contratodados.salvarContrato(contrato);
             Uteis.mensagemSalvo();
-            Button botao = (Button) evento.getTarget();
-            Stage tela = (Stage) botao.getScene().getWindow();
-            tela.close();
-        } catch (SQLException ex) {
+            FXMLDocumentController principal = new FXMLDocumentController();
+            PrincipalController.limparTela();
+                    } catch (SQLException ex) {
             ex.printStackTrace();
             Uteis.mensagemNaoSalvo();
         }   
