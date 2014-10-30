@@ -58,17 +58,24 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
+    private void CloseLoginOpenPrincipal(ActionEvent e, String fxml) {
+        OpenWindows(fxml);
+        Button botao = (Button) e.getTarget();
+        Stage tela = (Stage) botao.getScene().getWindow();
+        tela.close();
+    }
+
     @FXML
     public void BtnOk(ActionEvent evento) {
         if (TxtLogin.getText().equals("adm") && TxtSenha.getText().equals("ab123")) {
-            btnopcoes.setText("Cadastrar Usuario");
+            CloseLoginOpenPrincipal(evento,"fxml/OperadorFXML.fxml");
         } else {
             try {
                 usuario.setLogin(TxtLogin.getText());
                 usuario.setSenha(TxtSenha.getText());
                 Usuario resultado = usuarios.buscarUsuarioSenha(usuario);
                 if (TxtLogin.getText().equals(resultado.getLogin()) && TxtSenha.getText().equals(resultado.getSenha())) {
-                    btnopcoes.setText("Dados do Usuário");
+                    CloseLoginOpenPrincipal(evento,"fxml/Principal.fxml");
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuário ou senha incorreta!");
                 }
@@ -81,34 +88,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     public void btnSair(ActionEvent e) {
-        OpenWindows("fxml/Principal.fxml");
         Button botao = (Button) e.getTarget();
         Stage tela = (Stage) botao.getScene().getWindow();
         tela.close();
     }
 
-    public void BtnCadastrarAluno(ActionEvent evento) {
-        OpenWindows("fxml/CandidatoFXML.fxml");
-        Uteis.mensagemBuscarDados();
-    }
-
-    public void BtnCadastrarEmpresa(ActionEvent evento) {
-        OpenWindows("fxml/EmpresaFXML.fxml");
-    }
-
-    public void BtnCadastrarCurso(ActionEvent evento) {
-        OpenWindows("fxml/ContratoFXML.fxml");
-    }
-
-    public void BtnPesquisar(ActionEvent evento) {
-        OpenWindows("fxml/FormacaoFXML.fxml");
-    }
-
-    public void BtnOpcoes(ActionEvent evento) {
-        if (btnopcoes.getText().equals("Cadastrar Usuario")) {
-            OpenWindows("fxml/OperadorFXML.fxml");
-        } else {
-            OpenWindows("fxml/UsuarioFXML.fxml");
-        }
-    }
 }

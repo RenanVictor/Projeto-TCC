@@ -10,11 +10,11 @@
   <children>
     <MenuBar fx:id="menubar" prefWidth="604.0000999999975" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
       <menus>
-        <Menu mnemonicParsing="false" onAction="#abrirEmpresa" text="Cadastro">
+        <Menu mnemonicParsing="false" text="Cadastro">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#abrirCandidato" text="Candidato" />
-            <MenuItem mnemonicParsing="false" text="Empresa" />
-            <MenuItem mnemonicParsing="false" text="Curso" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirEmpresa" text="Empresa" />
+            <MenuItem mnemonicParsing="false" onAction="#abrirCurso" text="Curso" />
             <MenuItem mnemonicParsing="false" onAction="#abrirCandidato" text="Operador" />
           </items>
         </Menu>

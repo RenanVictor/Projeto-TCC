@@ -1,9 +1,19 @@
 package tcc.dominio;
 
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Entity
 @Table(name = "Usuario")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Codusuario")
     private Integer codigo;
     private String login;
     private String senha;
@@ -11,6 +21,7 @@ public class Usuario {
     private String telefone;
     private String email;
 
+    
     public Integer getCodigo() {
         return codigo;
     }

@@ -135,7 +135,7 @@ insert into empresa (FANTASIA, RAZAO) Values('CCAA','Escola');
 Insert into CANDIDATO(Nome,endereco,cpf,numero,bairro,cidade,estado,DATA_NASCIMENTO,EMAIL,Tel_Residencial,Tel_Celular,Statuscursando,estadocivil) 
 Values('Renan Victor','Rua João Pessoa','37854330803','166','Vila Pereira','Matão','SP','1991-11-25','Renan.victor.p@gmail.com','33849731','992531793','SIM','Solteiro');
 
-
+insert into usuario(nome,telefone,email,senha,login) values ('Renan','33849731','Renan@','123','Renan');
 
 DROP TABLE CONTRATO;
 

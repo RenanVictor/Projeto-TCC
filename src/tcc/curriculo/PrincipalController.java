@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.MenuBar;
 import javafx.scene.layout.Pane;
 import tcc.curriculo.fxml.JanelaUtil;
 
